@@ -23,7 +23,7 @@ let fetch = UrlRequire('https://cdn.jsdelivr.net/npm/node-fetch@2.6.1/lib/index.
 ```
 
 #### Returned Object
-```json
+```
 {
   userId: 1,
   id: 2,
