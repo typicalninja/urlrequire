@@ -5,6 +5,10 @@ with this package you can require packages over a url, instead of installing the
 
 > definitely **Don't** suggest to be used in production.
 
+# Install
+
+`npm i @typicalninja21/urlrequire`
+
 # Usage
 
 > For this example we will be using `jsdelivr.com` (https://www.jsdelivr.com/package/npm/[packageName]) 
@@ -14,7 +18,7 @@ with this package you can require packages over a url, instead of installing the
 ### Example: node-fetch
 
 ```js
-const UrlRequire = require('@typicalninja21/urlRequire');
+const UrlRequire = require('@typicalninja21/urlrequire');
 let fetch = UrlRequire('https://cdn.jsdelivr.net/npm/node-fetch@2.6.1/lib/index.js');
 
 (async () => {
