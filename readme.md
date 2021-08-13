@@ -1,6 +1,8 @@
 # UrlRequire
 > Welcome to my most stupid package : )
 
+** A package to require npm packages (or any kind of script) over a url, synchronously (no need to await it, or deal with any kind of promises)** 
+
 with this package you can require packages over a url, instead of installing them and filling up your pc (or server or whatever) with "node_modules" folders
 
 > definitely **Don't** suggest to be used in production.
@@ -19,7 +21,7 @@ with this package you can require packages over a url, instead of installing the
 
 ```js
 const UrlRequire = require('@typicalninja21/urlrequire');
-let fetch = UrlRequire('https://cdn.jsdelivr.net/npm/node-fetch@2.6.1/lib/index.js');
+let fetch = UrlRequire({ url: 'https://cdn.jsdelivr.net/npm/node-fetch@2.6.1/lib/index.js' });
 
 (async () => {
     console.log(await fetch('https://jsonplaceholder.typicode.com/todos/2').then(r => r.json()))
@@ -35,6 +37,22 @@ let fetch = UrlRequire('https://cdn.jsdelivr.net/npm/node-fetch@2.6.1/lib/index.
   completed: false
 }
 ```
+
+
+# Examples: ms
+
+* Instead of using a url, you can use the npm package name, and the package will try to resolve that url to a unpkg one
+
+```js
+const  UrlRequire = require('@typicalninja21/urlrequire')
+let ms = UrlRequire({ url: 'ms' });
+
+console.log(ms(20000))
+```
+
+> Will log `20s`
+
+
 
 
 # Limits/disadvantages

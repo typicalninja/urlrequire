@@ -1,10 +1,13 @@
 {
   "name": "@typicalninja21/urlrequire",
-  "version": "1.0.0",
-  "description": "",
+  "version": "1.0.1",
+  "description": "Something bad",
   "main": "index.js",
   "dependencies": {
-    "sync-fetch": "^0.3.0"
+    "find-requires": "^1.0.0",
+    "is-name-taken": "^2.0.0",
+    "sync-fetch": "^0.3.0",
+    "url-join": "^4.0.1"
   },
   "devDependencies": {},
   "scripts": {
