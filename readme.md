@@ -1,7 +1,7 @@
 # UrlRequire
 > Welcome to my most stupid package : )
 
-** A package to require npm packages (or any kind of script) over a url, synchronously (no need to await it, or deal with any kind of promises)** 
+**A package to require npm packages (or any kind of script) over a url, synchronously (no need to await it, or deal with any kind of promises)** 
 
 with this package you can require packages over a url, instead of installing them and filling up your pc (or server or whatever) with "node_modules" folders
 
