@@ -41,7 +41,7 @@ let fetch = UrlRequire({ url: 'https://cdn.jsdelivr.net/npm/node-fetch@2.6.1/lib
 
 # Examples: ms
 
-* Instead of using a url, you can use the npm package name, and the package will try to resolve that url to a unpkg one
+* Instead of using a url, you can use the npm package name, and the package will try to resolve that url to a [unpkg](https://unpkg.com) one
 
 ```js
 const  UrlRequire = require('@typicalninja21/urlrequire')
