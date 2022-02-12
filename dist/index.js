@@ -5,9 +5,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.requireAsync = exports.requireCache = exports.requireSync = void 0;
 var utils_1 = require("./utils");
-// using miniget as we only need to do GET requests
+// using Axios to do async requests
 var axios_1 = __importDefault(require("axios"));
-// no ts stuff for syncFetch, and user need to install sync fetch them self
+// using sync-fetch to do sync requests, user needs to install sync-fetch them self
 var syncFetch = (0, utils_1.optionalRequire)("sync-fetch");
 // module cache
 var Cache = Object.create(null);
@@ -77,7 +77,7 @@ function _requireSync(scriptUrl, options) {
     if (options === void 0) { options = { patchRequire: false, requestOptions: {}, passOptions: false }; }
     // user needs to install sync-fetch them self
     if (!syncFetch)
-        throw new Error("sync-fetch (https://www.npmjs.com/package/sync-fetch) is not installed, we do not install sync-fetch package ourself in new versions (or use requireAsync)");
+        throw new Error("sync-fetch (https://www.npmjs.com/package/sync-fetch) is not installed, we do not install sync-fetch by default in new versions (or use requireAsync)");
     // only strings are allowed
     if (typeof scriptUrl !== "string")
         throw new Error("PackageName must be a string, received " + typeof scriptUrl);

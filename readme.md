@@ -45,6 +45,7 @@ npm i sync-fetch
 * This uses requireAsync 
 #### Requiring Npm package :: [ms](https://www.npmjs.com/package/ms)
 
+> **You can use a direct link to raw source code of the package if you want** (ex: https://unpkg.com/ms@2.1.3/index.js)
 ###### Typescript
 
 ```ts
@@ -74,6 +75,104 @@ requireAsync('ms').then((ms) => {
 #### Requiring a custom-script
 
 * Script used is hosted on [Github](https://github.com/typicalninja493/urlrequire/blob/main/example/example.js)
+
+###### Typescript
+
+```ts
+const url = 'https://raw.githubusercontent.com/typicalninja493/urlrequire/main/example/example.js'
+import { requireAsync } from '@typicalninja21/urlrequire';
+
+requireAsync(url).then((myCustomScript) => {
+    console.log(`Loaded myCustomScript`, myCustomScript)
+    // stuff provided by our custom script
+    console.log('#add()', myCustomScript.add(1, 2, 3, 4, 5))
+    console.log('#multiply()', myCustomScript.multiply(1, 2, 3, 4, 5));
+    console.log('#divide()', myCustomScript.divide(1, 2, 3, 4, 5))
+    console.log('#subtract()', myCustomScript.subtract(1, 2, 3, 4, 5))
+    console.log('#addStrings()', myCustomScript.addStrings('This is', ' ', 'cool', '', 'ngl'))
+}).catch((err) => {
+    console.log(`Error loading myCustomScript`, err)
+})
+```
+
+###### Javascript
+
+```js
+const url = 'https://raw.githubusercontent.com/typicalninja493/urlrequire/main/example/example.js'
+const { requireAsync } = require('@typicalninja21/urlrequire');
+
+
+requireAsync(url).then((myCustomScript) => {
+    console.log(`Loaded myCustomScript`, myCustomScript)
+    // stuff provided by our custom script
+    console.log('#add()', myCustomScript.add(1, 2, 3, 4, 5))
+    console.log('#multiply()', myCustomScript.multiply(1, 2, 3, 4, 5));
+    console.log('#divide()', myCustomScript.divide(1, 2, 3, 4, 5))
+    console.log('#subtract()', myCustomScript.subtract(1, 2, 3, 4, 5))
+    console.log('#addStrings()', myCustomScript.addStrings('This is', ' ', 'cool', '', 'ngl'))
+}).catch((err) => {
+    console.log(`Error loading myCustomScript`, err)
+})
+```
+### sync
+
+> Using requireSync **is NOT recommended** (if possible please use **requireAsync**), however if your are the guy who wants to get the native node.js require feel from this. you are **free to use this**. (no awaits. no promises. just requiring)
+
+* **requireSync** requires optional dependency **[sync-fetch](https://www.npmjs.com/package/sync-fetch)**
+
+#### Requiring Npm package :: [ms](https://www.npmjs.com/package/ms)
+
+> **You can use a direct link to raw source code of the package if you want** (ex: https://unpkg.com/ms@2.1.3/index.js)
+###### Typescript
+
+```ts
+import { requireSync } from '@typicalninja21/urlrequire';
+// its almost similar to normal require
+const ms = requireSync('ms')
+console.log(ms(20000))
+```
+
+###### Javascript
+
+```js
+const { requireSync } = require('@typicalninja21/urlrequire');
+
+// its almost similar to normal require
+const ms = requireSync('ms')
+console.log(ms(20000))
+```
+
+#### Requiring a custom-script
+
+* Script used is hosted on [Github](https://github.com/typicalninja493/urlrequire/blob/main/example/example.js)
+
+###### Typescript
+
+```ts
+const url = 'https://raw.githubusercontent.com/typicalninja493/urlrequire/main/example/example.js'
+import { requireSync } from '@typicalninja21/urlrequire';
+const myCustomScript = requireSync(url)
+    console.log('#add()', myCustomScript.add(1, 2, 3, 4, 5))
+    console.log('#multiply()', myCustomScript.multiply(1, 2, 3, 4, 5));
+    console.log('#divide()', myCustomScript.divide(1, 2, 3, 4, 5))
+    console.log('#subtract()', myCustomScript.subtract(1, 2, 3, 4, 5))
+    console.log('#addStrings()', myCustomScript.addStrings('This is', ' ', 'cool', '', 'ngl'))
+```
+
+###### Javascript
+
+```js
+const url = 'https://raw.githubusercontent.com/typicalninja493/urlrequire/main/example/example.js'
+const { requireSync } = require('@typicalninja21/urlrequire');
+
+const myCustomScript = requireSync(url)
+    console.log('#add()', myCustomScript.add(1, 2, 3, 4, 5))
+    console.log('#multiply()', myCustomScript.multiply(1, 2, 3, 4, 5));
+    console.log('#divide()', myCustomScript.divide(1, 2, 3, 4, 5))
+    console.log('#subtract()', myCustomScript.subtract(1, 2, 3, 4, 5))
+    console.log('#addStrings()', myCustomScript.addStrings('This is', ' ', 'cool', '', 'ngl'))
+```
+
 # Tests
 
 > Tests are found in the [test folder](https://github.com/typicalninja493/urlrequire/tree/main/tests)
