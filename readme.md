@@ -73,10 +73,10 @@ requireAsync('ms').then((ms) => {
 
 #### Requiring a custom-script
 
-* Script used is hosted on []
+* Script used is hosted on [Github](https://github.com/typicalninja493/urlrequire/blob/main/example/example.js)
 # Tests
 
-> Tests are found in the [test folder](/tests/)
+> Tests are found in the [test folder](https://github.com/typicalninja493/urlrequire/tree/main/tests)
 
 * [Mocha](https://mochajs.org/) is required to run the tests
 
