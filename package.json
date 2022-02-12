@@ -1,19 +1,20 @@
 {
   "name": "@typicalninja21/urlrequire",
   "version": "1.0.1",
-  "description": "Something bad",
+  "description": "Easy to use module to require scripts over urls",
   "main": "index.js",
   "dependencies": {
-    "find-requires": "^1.0.0",
-    "is-name-taken": "^2.0.0",
+    "miniget": "^4.2.2",
     "sync-fetch": "^0.3.0",
-    "url-join": "^4.0.1"
+    "ts-node": "^10.2.1"
   },
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^16.11.12"
+  }
 }
