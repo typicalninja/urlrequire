@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.optionalRequire = exports.isUrl = exports.isInstalled = void 0;
+exports.RequireTypes = exports.optionalRequire = exports.isUrl = exports.isInstalled = void 0;
 function isInstalled(packageName) {
     try {
         require(packageName);
@@ -28,3 +28,8 @@ function optionalRequire(packageName) {
     return undefined;
 }
 exports.optionalRequire = optionalRequire;
+var RequireTypes = {
+    async: ['async', 'requireAsync', '_requireAsync'],
+    sync: ['sync', 'requireSync', '_requireSync'],
+};
+exports.RequireTypes = RequireTypes;
