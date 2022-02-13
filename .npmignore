@@ -1,8 +1,0 @@
-index.ts
-.gitignore
-.npmignore
-tsconfig.json
-utils.ts
-/.vscode
-/tests
-/example
