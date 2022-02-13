@@ -2,3 +2,5 @@
 /.vscode
 /dist
 tsconfig.json
+.npmignore
+.gitignore
