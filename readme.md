@@ -4,9 +4,17 @@
 * This does exactly what it says on the tin, it allows you to require scripts over urls
 * It is a very simple module, and it is very easy to use
 * It is not safe, and it is not meant to be
-* It is not meant to be used for anything other than testing
 * However if your dumb enough you can use this in production : )
 
+
+# Table of Contents
+
+ 1. [Installation](#install)
+ 2. [Usage](#usage)
+    1. [requireAsync](#async)
+    2. [requireSync](#sync)
+    3. [options](#options)
+ 3. [Tests](#tests)
 
 # Install
 
@@ -36,9 +44,10 @@ npm i sync-fetch
 
 * The package is mostly great for 1 file scripts that is not too big
 
-* if you want to use it for a script that uses a lot of files, you may first want to convert that script to use urlRequire methods (so you can load the files it wants using url to them) or use **patchRequire** option
+* if you want to use it for a script that uses a lot of files, you may first want to convert that script to use urlRequire methods (so you can load the files/dependencies it wants using an url to them) or use **patchRequire** option
 
-* If you pass a direct package name instead of a url, it will try to resolve that url to a [unpkg](https://unpkg.com) one (https://unpkg.com/[package-name]). however this would only work for a package that only has 1 file and (possibly no dependencies or dependencies that only have 1 file, **and with patchRequire enabled**)
+* If you pass a direct package name instead of a url, it will try to resolve that url to a [unpkg](https://unpkg.com) one (https://unpkg.com/[package-name]). however this would **only** work for a package that only has 1 file and (possibly no dependencies or have dependencies that only have 1 file, **and with patchRequire enabled**)
+
 
 ### async
 
@@ -116,13 +125,13 @@ requireAsync(url).then((myCustomScript) => {
 ```
 ### sync
 
-> Using requireSync **is NOT recommended** (if possible please use **requireAsync**), however if your are the guy who wants to get the native node.js require feel from this. you are **free to use this**. (no awaits. no promises. just requiring)
+> Using requireSync **is NOT recommended** (if possible please use **[requireAsync](#async)**), however if your are the guy who wants to get the native node.js require feel from this. you are **free to use this**. (no awaits. no promises. just requiring)
 
 * **requireSync** requires optional dependency **[sync-fetch](https://www.npmjs.com/package/sync-fetch)**
 
 #### Requiring Npm package :: [ms](https://www.npmjs.com/package/ms)
 
-> **You can use a direct link to raw source code of the package if you want** (ex: https://unpkg.com/ms@2.1.3/index.js)
+> **You can use a direct link to raw source code of the package if you want** (ex: `https://unpkg.com/ms@2.1.3/index.js`)
 ###### Typescript
 
 ```ts
@@ -172,6 +181,17 @@ const myCustomScript = requireSync(url)
     console.log('#subtract()', myCustomScript.subtract(1, 2, 3, 4, 5))
     console.log('#addStrings()', myCustomScript.addStrings('This is', ' ', 'cool', '', 'ngl'))
 ```
+
+## Options
+
+> Second argument for **[requireAsync](#async)** and **[requireSync](#sync)** is **options** which is an object.
+
+* `options.requestOptions` - Is a Object (default: `{}`).for requireAsync it takes a `requestConfig` of **[axios](https://www.npmjs.com/package/axios#request-config)**.
+for requireSync it takes a {} that will be passed to **[sync-fetch](https://www.npmjs.com/package/sync-fetch)**, sync-fetch runs node-fetch under the hood please refer docs for node-fetch for the **[requestConfig](https://github.com/node-fetch/node-fetch#options)**.
+
+* `options.patchRequire` - Is a boolean (default: `true`), a function (takes [requireAsync](async) or [requireSync](#sync)). If set to `true` the package will attempt to replace the native require function with the one provided by the package (or if provided a function, that function) in the required script.**if this is set to false, the native require will be used, if you want to use require methods by this package, we also add requireSync and requireAsync to the global context of the required script**.
+
+* `options.passOptions` - Is a Boolean.only works with above `options.patchRequire` is enabled.If set to `true` the package will the pass the same options you provided to the script you required
 
 # Tests
 

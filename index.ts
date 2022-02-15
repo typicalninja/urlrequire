@@ -5,7 +5,7 @@ import axios, { AxiosRequestConfig } from "axios";
 const syncFetch = optionalRequire("sync-fetch");
 
 type RequireOptions = {
-  requestOptions: AxiosRequestConfig | undefined; 
+  requestOptions: AxiosRequestConfig | undefined | { [key: string]: any }; 
   patchRequire: boolean | Function | string, 
   passOptions: boolean | undefined
 }
@@ -55,6 +55,7 @@ function _requireAsync(
     throw new Error(
       `requestOptions must be an object, received ${typeof options.requestOptions}`
     );
+  if(options.passOptions && typeof options.passOptions !== "boolean") throw new Error(`passOptions must be a boolean, received ${typeof options.passOptions}`)
   let parsedScriptUrl = scriptUrl;
   return new Promise((resolve, reject) => {
     // user did not provide a url, probably a package name was given
@@ -97,6 +98,7 @@ function _requireSync(
     throw new Error(
       `requestOptions must be an object, received ${typeof options.requestOptions}`
     );
+  if(options.passOptions && typeof options.passOptions !== "boolean") throw new Error(`passOptions must be a boolean, received ${typeof options.passOptions}`)
   let parsedScriptUrl = scriptUrl;
   if (!isUrl(parsedScriptUrl)) {
     if (isInstalled(parsedScriptUrl)) return require(parsedScriptUrl);

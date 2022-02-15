@@ -3,6 +3,7 @@
   "version": "1.0.2",
   "description": "Easy to use module to require scripts over urls",
   "main": "index.js",
+  "types": "",
   "dependencies": {
     "axios": "^0.25.0",
     "sync-fetch": "^0.3.1"
