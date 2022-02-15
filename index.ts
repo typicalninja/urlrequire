@@ -40,7 +40,7 @@ function getRequire(options: RequireOptions) {
   else return require;
 }
 
-// require using sync fetch (not recommended)
+// require using axios (recommended)
 function _requireAsync(
   scriptUrl: string,
   options: RequireOptions = {
@@ -80,6 +80,7 @@ function _requireAsync(
   });
 }
 
+// require using sync-fetch (not recommended)
 function _requireSync(
   scriptUrl: string,
   options: RequireOptions = { patchRequire: false, requestOptions: {}, passOptions: false }
