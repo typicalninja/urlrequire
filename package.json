@@ -1,6 +1,6 @@
 {
   "name": "@typicalninja21/urlrequire",
-  "version": "1.0.2",
+  "version": "1.0.1",
   "description": "Easy to use module to require scripts over urls",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
