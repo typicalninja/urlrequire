@@ -207,4 +207,4 @@ npm run test
 
 # License
 
-This repository and the code inside it is licensed under the MIT License. Read [LICENSE]() for more information.
+This repository and the code inside it is licensed under the MIT License. Read [LICENSE](https://github.com/typicalninja493/urlrequire/blob/main/LICENSE) for more information.
