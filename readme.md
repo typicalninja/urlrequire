@@ -207,4 +207,4 @@ npm run test
 
 # License
 
-This Project is licensed under MIT license.View [License] for more info
+This repository and the code inside it is licensed under the MIT License. Read [LICENSE]() for more information.
