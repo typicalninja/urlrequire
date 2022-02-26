@@ -1,9 +1,10 @@
 {
   "name": "@typicalninja21/urlrequire",
-  "version": "1.0.1",
+  "version": "2.0.1",
   "description": "Easy to use module to require scripts over urls",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "repository": "typicalninja493/urlrequire",
   "dependencies": {
     "axios": "^0.25.0"
   },
@@ -19,7 +20,7 @@
     "sync-url-require"
   ],
   "author": "typicalninja21",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "@types/node": "^16.11.12"
   }

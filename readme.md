@@ -204,3 +204,7 @@ for requireSync it takes a {} that will be passed to **[sync-fetch](https://www.
 ```
 npm run test
 ```
+
+# License
+
+This Project is licensed under MIT license.View [License] for more info
